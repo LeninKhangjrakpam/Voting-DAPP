@@ -1,0 +1,33 @@
+.hex {
+  position: absolute;
+  background-color: #433737;
+  display: inline-block;
+  transition: 500ms;
+  opacity: 0;
+  animation: hex-anim 4s linear 0s infinite alternate;
+}
+
+.hex:hover {
+  /* background-color: salmon; */
+  opacity: 1;  
+} 
+
+@keyframes hex-anim {
+  0% {
+    background-color: salmon;
+  }
+  20% {
+    background-color: yellow;
+  }
+  40% {
+    background-color: green;
+  }
+  60% {
+    background-color: purple;
+  }
+  80% {
+    background-color: red;
+  }100% {
+    background-color: lightblue;
+  }
+}

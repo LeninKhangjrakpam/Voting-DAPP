@@ -1,0 +1,12 @@
+.seat {
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 1px solid grey;
+  margin: 0.2rem;
+  border-radius: 0.2rem;
+}
+
+.seat:hover {
+  background-color: rgb(177, 177, 177);
+}

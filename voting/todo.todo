@@ -1,0 +1,30 @@
+For Decentralised voting app
+- create this map structure
+
+mapping(uint => uint) uniqIDVoterIdMap;
+
+Usage:
+// Map structure
+{
+  "8w93": 1,
+  rett5": 2,
+  "uiye32w323f": 3
+}
+
+So, we can give this unique ID to voter on registration.
+But, we'll be using voterID(1, 2, 3, ...) for accessing other map structure (like primary KEY)
+When, user vote using this unique ID, we can used map structure to retrieve voterId
+from unique ID submitted from frontend form using this `uniqIDVoterIdMap` structure
+
+Usage: 
+event RetValEvntUint(uint retVal);  //  for other operation
+
+// Return: Err, Val
+function getVoterIdFromUniqID(uint uniqId) private view returns(bool, uint) {
+  uint vId = uniqIDVoterIdMap[uinqId];
+  if (vId == 0) { // Non exitsing uniqId
+    return (true, 0); 
+  }
+
+  return (false, vId);
+}

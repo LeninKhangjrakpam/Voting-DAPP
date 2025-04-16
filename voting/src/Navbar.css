@@ -1,0 +1,144 @@
+.navbar {
+  background-color: #000000;
+  color: inherit;
+  position: relative;
+}
+
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  cursor: pointer;
+  /* vertical-align: middle; */
+}
+
+.navbar-menu {
+  display: none;
+  /* transform-origin: top; */
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  /* transform: scaleY(0); */
+  /* transition: transform 2s; */
+
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.navbar-menu-active {
+  display: flex;
+  transform-origin: top;
+  opacity: 1;
+  transform: scaleY(1);
+  transition: 2s;
+}
+
+/* .navbar-container-active {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 1rem 0;
+  text-align: center;
+} */
+.navbar-items {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  transition: 1s;
+}
+
+.navbar-menu .navbar-items {
+  transform-origin: top;
+  transform: scaleY(0);
+
+}
+
+.navbar-menu-active .navbar-items {
+  transform-origin: top;
+  transform: scaleY(1);
+}
+
+.navbar-item {
+  margin: 0.8rem 0;
+  font-size: 1.2rem;
+  border-bottom: 1px solid salmon;
+}
+
+.navbar-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-toggle {
+  cursor: pointer;
+  position: absolute;
+  top: 0.4rem;
+  right: 0;
+  padding: 0.4rem;
+  font-size: 1.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* border: 1px solid green; */
+  }
+
+  .navbar-logo {
+    grid-column: 1 / 2;
+    /* border: 1px solid green; */
+    position: relative;
+    padding: 0.4rem;
+  }
+
+  .navbar-menu {
+    display: block;
+    grid-column: 2;
+  }
+
+  .navbar-menu .navbar-items {
+    display: grid;
+    transform: scaleY(1);
+    grid-template-columns: auto auto auto auto auto;
+    /* border: 1px solid green; */
+    margin: 0;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+
+  .navbar-item {
+    border-bottom: none;
+    /* border: 1px solid green; */
+    text-align: right;
+    font-size: 1.4rem;
+    width: fit-content;
+  }
+
+  .navbar-item::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: salmon;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: 400ms;
+  }
+
+  .navbar-item:hover::after {
+    transform: scaleX(1);
+  }
+
+}

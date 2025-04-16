@@ -1,0 +1,17 @@
+.info-container {
+  padding: 2vw;
+}
+
+
+.info-container section {
+  border: 1px solid saddlebrown;
+  padding: 0.4rem;
+  border-radius: 0.8rem;
+  margin: 1rem auto;
+  max-width: 90%;
+}
+
+.overflow-container {
+  max-width: 100%;
+  overflow: auto;
+}
